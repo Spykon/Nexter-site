@@ -1,0 +1,33 @@
+.features {
+    //background-color: $color-grey-light-2;
+    grid-column: center-start / center-end;
+
+    margin: 15rem 0;
+    
+    display: grid;
+    //grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); //Ricorro a questa configurazione per avere un layout responsivo
+    /*grid-template-rows: auto auto; //Si può anche trascurare questa specifica*/
+    grid-gap: 6rem;
+    align-items: start; //Porto in alto titolo e paragrafi
+}
+
+.feature {
+
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2.5rem;
+
+    &__icon {
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+        grid-row: 1 / span 2; //NB: voglio estendere la colonna delle icone su tutte e due le righe, non uso -1 perchè a livello superiore non ho definito il grid-template-row, perciò in questo caso 1/-1 NON FUNZIONA. Ma lo span funziona
+        transform: translateY(-1rem);
+    }
+
+    &__text {
+        font-size: 1.7rem;
+    }
+}

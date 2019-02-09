@@ -1,0 +1,45 @@
+.footer {
+    background-color: $color-secondary;
+    grid-column: full-start / full-end;
+
+    padding: 8rem;
+}
+
+.nav {
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    align-items: center;
+    grid-gap: 2rem;
+
+    &__link:link,
+    &__link:visited {
+        font-size: 1.4rem;
+        color: #fff;
+        text-decoration: none;
+        font-family: $font-display;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 1.5rem;
+        display: block;
+        transition: all .2s;
+
+    }
+
+    &__link:hover,
+    &__link:active {
+        background-color: rgba(#fff, .05);
+        transform: translateY(-3px); //porta leggermente in alto il bottone al passaggio del mouse
+    }
+}
+
+.copyright {
+    font-size: 1.4rem;
+    color: $color-grey-light-2;
+    margin-top: 6rem;
+    margin-right: auto; //per centrare il blocco copyright
+    margin-left: auto; //per centrare il blocco copyright
+    text-align: center; //per centrare la scritta quando va a capo
+    width: 70%;
+}

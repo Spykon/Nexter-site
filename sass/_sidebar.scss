@@ -1,0 +1,47 @@
+.sidebar {
+    background-color: $color-primary;
+    grid-column: sidebar-start / sidebar-end;
+    grid-row: 1 / -1;
+
+    display: flex;
+    justify-content: center; //centraggio orizzontale del bottone
+
+    @media only screen and (max-width: $bp-large) {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        justify-content: flex-end; //Perchè avevamo usato i flexbox!
+        align-items: center;        
+    }
+
+}
+
+.nav-btn { //caratteristiche del bottone
+    border: none;
+    border-radius: 0;
+
+    background-color: #fff;
+    height: 2px;
+    width: 4.5rem;
+    margin-top: 4rem;
+
+    //Introduco le pseudo-classi before ed after per avere altre due righe sul bottone, una sopra ed una sotto la riga che esprime il bottone
+    &::before,
+    &::after {
+        background-color: #fff;
+        height: 2px;
+        width: 4.5rem;
+        content: "";
+        display: block;
+    }
+
+    &::before { transform: translateY(-1.5rem); } //rigs sopra rispetto la principale
+    &::after { transform: translateY(1.3rem); } //riga sotto rispetto la principale
+
+    @media only screen and (max-width: $bp-large) {
+        margin-top: 0;
+        margin-right: 3rem;
+
+        &::before { transform: translateY(-1.2rem); } //riga sopra rispetto la principale
+        &::after { transform: translateY(1rem); } //riga sotto rispetto la principale
+    }
+}

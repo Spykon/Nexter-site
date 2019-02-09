@@ -1,0 +1,45 @@
+.realtors {
+    background-color: $color-secondary;
+    grid-column: col-start 7 / full-end;
+    padding: 3rem;
+
+    display: grid;
+    align-content: center; //allineamento verticale del contenuto al centro
+    justify-content: center; //allineamento orizzontale del contenuto al centro
+    justify-items: center; //allineamento orizzontale degli elementi al centro (titolo 3)
+    grid-row-gap: 2rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-column: 1/-1; //ho spostato la colonna dei venditori in basso all'header
+
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: min-content max-content;
+        grid-column-gap: 2rem;
+        grid-row-gap: 5vh;
+        align-items: center; //allinemanto verticale tra le immagini e la descrizione a lato
+
+        @media only screen and (max-width: $bp-medium) {
+            grid-template-columns: repeat(3, min-content max-content); //serve per porre i venditori in un unica riga
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            grid-template-columns: min-content max-content;
+        }
+    }
+
+    &__img {
+        width: 10rem;
+        border-radius: 50%;
+        display: block;
+    }
+
+    &__sold {
+        text-transform: uppercase;
+        color: $color-grey-light-2;
+        margin-top: 3px;
+
+    }
+}
